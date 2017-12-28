@@ -10,4 +10,10 @@
 
 @interface AFAppDotNetAPIClient : AFHTTPSessionManager
 
++ (AFHTTPSessionManager*)defaultNetManager;
+
++ (void)GET:(NSString*)url parameters:(NSDictionary*)parameter returnData:(void (^)(NSData * resultData,NSError * error))returnBlock;
+
++ (void)POST:(NSString*)url parameters:(NSDictionary*)parameter returnData:(void (^)(NSData * resultData,NSError * error))returnBlock;
+
 @end

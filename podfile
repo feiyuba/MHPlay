@@ -1,0 +1,15 @@
+platform :ios, '8.0'
+  
+target 'MHPlayer' do
+
+pod 'SGQRCode'
+
+pod 'CLPlayer'
+
+pod 'AFNetworking'
+
+pod 'Masonry'
+
+pod 'SDWebImage'
+
+end

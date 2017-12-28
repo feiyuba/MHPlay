@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "DiscoverVC.h"
+#import "QRScanVC.h"
+#import "MessageVC.h"
+#import "MainVC.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +21,36 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UITabBarController *tabbar = [[UITabBarController alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    navi.tabBarItem.image =  [[UIImage imageNamed:@"首页"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    navi.tabBarItem.selectedImage = [[UIImage imageNamed:@"首页-颜色"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    navi.tabBarItem.title = @"首页";
+    
+    UINavigationController *navi1 = [[UINavigationController alloc] initWithRootViewController:[DiscoverVC new]];
+    navi1.tabBarItem.image =  [[UIImage imageNamed:@"发现"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    navi1.tabBarItem.selectedImage = [[UIImage imageNamed:@"发现-颜色"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    navi1.tabBarItem.title = @"发现";
+    
+    UINavigationController *navi2 = [[UINavigationController alloc] initWithRootViewController:[QRScanVC new]];
+    navi2.tabBarItem.image =  [[UIImage imageNamed:@"扫一扫"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    navi2.tabBarItem.selectedImage = [[UIImage imageNamed:@"扫一扫颜色"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UINavigationController *navi3 = [[UINavigationController alloc] initWithRootViewController:[MessageVC new]];
+    navi3.tabBarItem.image =  [[UIImage imageNamed:@"消息"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    navi3.tabBarItem.title = @"消息";
+    navi3.tabBarItem.selectedImage = [[UIImage imageNamed:@"消息-颜色"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    UINavigationController *navi4 = [[UINavigationController alloc]initWithRootViewController:[MainVC new]];
+    navi4.tabBarItem.image =  [[UIImage imageNamed:@"我的"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    navi4.tabBarItem.title = @"我的";
+    navi4.tabBarItem.selectedImage = [[UIImage imageNamed:@"我的-颜色"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    tabbar.viewControllers = @[navi,navi1,navi2,navi3,navi4];
+    
+    self.window.rootViewController = tabbar;
+    
     return YES;
 }
 

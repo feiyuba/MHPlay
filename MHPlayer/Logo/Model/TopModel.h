@@ -10,4 +10,10 @@
 
 @interface TopModel : NSObject
 
+@property (nonatomic, strong) NSString *alias;
+@property (nonatomic, strong) NSString *ename;
+@property (nonatomic, strong) NSString *tid;
+@property (nonatomic, strong) NSString *tname;
+@property (nonatomic, strong) NSString *topic_icons;
+
 @end
